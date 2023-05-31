@@ -4,10 +4,13 @@ class View {
 
     console.log(this.mainContainerEl);
   }
-  addParagraph() {
+  addParagraph(text) {
     const newParagraph = document.createElement('p');
-    newParagraph.innerText = 'I was created very dynamically';
+    newParagraph.innerText = text;
     this.mainContainerEl.append(newParagraph);
+  }
+  clearParagraphs() {
+    this.mainContainerEl.remove('p')
   }
 }
 

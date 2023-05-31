@@ -11,10 +11,13 @@
           this.mainContainerEl = document.querySelector("#main-container");
           console.log(this.mainContainerEl);
         }
-        addParagraph() {
+        addParagraph(text) {
           const newParagraph = document.createElement("p");
-          newParagraph.innerText = "I was created very dynamically";
+          newParagraph.innerText = text;
           this.mainContainerEl.append(newParagraph);
+        }
+        clearParagraphs() {
+          this.mainContainerEl.remove("p");
         }
       };
       module.exports = View2;
@@ -24,5 +27,5 @@
   // index.js
   var View = require_view();
   var view = new View();
-  view.addParagraph();
+  view.addParagraph("test");
 })();

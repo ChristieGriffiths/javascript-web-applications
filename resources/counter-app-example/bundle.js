@@ -10,7 +10,7 @@
       var CounterModel2 = class {
         constructor() {
           this.counter = 0;
-          console.log("hey");
+          console.log("THIS IS A TEST");
         }
         getCounter() {
           return this.counter;
