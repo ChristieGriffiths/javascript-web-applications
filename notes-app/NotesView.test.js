@@ -29,6 +29,6 @@ describe('A test for my web page', () => {
     // Usually, you will use `.querySelector` (and friends)
     // here, and assert the text content, the number of elements,
     // or other things that make sense for your test.
-    expect(document.querySelectorAll('div.note').length).toBe(1);
+    expect(document.querySelectorAll('div.note').length).toBe(2);
   });
 });

@@ -1,6 +1,6 @@
 class NotesView {
   constructor(model) {
-    this.model = this.model
+    this.model = model
     this.mainContainerEl = document.querySelector('#main-container');
   }
   displayNotes() {
