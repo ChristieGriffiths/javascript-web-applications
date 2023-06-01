@@ -18,8 +18,7 @@ describe('A test for my web page', () => {
     // 1. Arrange - instantiate our View class
     const model = new NotesModel()
     const view = new NotesView(model);
-    model.addNotes('Note 1')
-    model.addNotes('Note 2')
+    // model.addNotes('Note 1')
     // 2. Act - call any method that modifies the page
     // this method `displayTitle` would dynamically
     // set a <h1> title on the page with the given content
@@ -29,6 +28,42 @@ describe('A test for my web page', () => {
     // Usually, you will use `.querySelector` (and friends)
     // here, and assert the text content, the number of elements,
     // or other things that make sense for your test.
+    expect(document.querySelectorAll('div.note').length).toBe(1);
+  });
+  it('allows user to add a note and then display that note', () => {
+    // 1. Arrange - instantiate our View class
+    const model = new NotesModel()
+    const view = new NotesView(model);
+    const content = document.querySelector('#note-input')
+    content.value = 'Note 1'
+    // 2. Act - call any method that modifies the page
+    // this method `displayTitle` would dynamically
+    // set a <h1> title on the page with the given content
+    view.displayNotes();
+
+    // 3. Assert - we assert the page contains what it should.
+    // Usually, you will use `.querySelector` (and friends)
+    // here, and assert the text content, the number of elements,
+    // or other things that make sense for your test.
+    expect(document.querySelector('div.note').textContent).toEqual('Note 1');
+  });
+  it('allows user to add a note and then display that note', () => {
+    // 1. Arrange - instantiate our View class
+    const model = new NotesModel()
+    const view = new NotesView(model);
+    const content = document.querySelector('#note-input')
+    content.value = 'Note 1'
+    // 2. Act - call any method that modifies the page
+    // this method `displayTitle` would dynamically
+    // set a <h1> title on the page with the given content
+    view.displayNotes();
+    view.displayNotes();
+
+    // 3. Assert - we assert the page contains what it should.
+    // Usually, you will use `.querySelector` (and friends)
+    // here, and assert the text content, the number of elements,
+    // or other things that make sense for your test.
     expect(document.querySelectorAll('div.note').length).toBe(2);
   });
+
 });
